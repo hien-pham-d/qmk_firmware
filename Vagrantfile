@@ -7,7 +7,7 @@ Vagrant.configure(2) do |config|
 
   # VMware/Virtualbox ( and also Hyperv/Parallels) 64 bit
   config.vm.box = "generic/debian10"
-  
+
   config.vm.synced_folder '.', '/vagrant'
 
   # This section allows you to customize the Virtualbox VM
