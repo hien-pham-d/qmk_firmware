@@ -24,6 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define _LOWER_L  1
 #define _RAISE_L  2
 #define _ADJUST_L 3
+#define _GAME_L 4
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE_L] = LAYOUT_split_3x6_3(
@@ -45,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_NO,  KC_TAB, KC_TRNS, KC_BSPC, KC_SPC,  KC_ENT,                      KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,  KC_ENT,   KC_NO,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        KC_NO,   MO(4), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                      KC_TRNS, KC_TRNS,   KC_LT,   KC_GT, KC_QUES,   KC_NO,
+        KC_NO,   KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, TG(_GAME_L),                       KC_TRNS, KC_TRNS,   KC_LT,   KC_GT, KC_QUES,   KC_NO,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                             KC_NO, KC_TRNS, KC_TRNS,    KC_TRNS,   MO(3),   KC_NO
                                       //`--------------------------'  `--------------------------'
@@ -73,7 +74,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                             KC_NO, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS,   KC_NO
                                       //`--------------------------'  `--------------------------'
-  )
+  ),
+  [_GAME_L] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        KC_NO, KC_Q,   KC_W, KC_E,  KC_R, KC_T,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_TRNS, KC_BSPC,   KC_NO,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        KC_NO,  KC_A, KC_S, KC_D, KC_F,  KC_G,                      KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,  KC_ENT,   KC_NO,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        KC_NO,   KC_Z, KC_X, KC_C, KC_V, TG(_GAME_L),                      KC_TRNS, KC_TRNS,   KC_LT,   KC_GT, KC_QUES,   KC_NO,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                            KC_TRNS, KC_TRNS, KC_LALT,    KC_TRNS,   MO(3),   KC_NO
+                                      //`--------------------------'  `--------------------------'
+  ),
 };
 
 #ifdef OLED_ENABLE
