@@ -29,13 +29,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define EE_HANDS
 
 //#define TAPPING_FORCE_HOLD
-#define TAPPING_TERM 350
+#define TAPPING_TERM 400
 
 // START hien-pd-dac config
 // set Mod Tap keys's behavior match the behavior other dual-role keys.
 // If this is not set, behavior of PERMISSIVE_HOLD will not effect Mod Tap keys.
 #define IGNORE_MOD_TAP_INTERRUPT
-#define PERMISSIVE_HOLD
+// #define PERMISSIVE_HOLD
 // END   hien-pd-dac config
 
 #ifdef RGBLIGHT_ENABLE
