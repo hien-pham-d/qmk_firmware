@@ -1,0 +1,11 @@
+version: '3'
+
+set: ['errexit', 'nounset', 'pipefail']
+
+tasks:
+  compile:
+    cmds:
+      - qmk compile
+  flash:
+    cmds:
+      - qmk flash
