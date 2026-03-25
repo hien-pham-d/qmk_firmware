@@ -4,8 +4,18 @@ set: ['errexit', 'nounset', 'pipefail']
 
 tasks:
   compile:
+    desc: 'Compile the keyboard firmware'
     cmds:
       - qmk compile
   flash:
+    desc: 'Flash the keyboard firmware'
     cmds:
       - qmk flash
+  go:
+    desc: 'Compile and flash the keyboard firmware'
+    cmds:
+      - task: compile
+      - task: flash
+  gen-keymapjson:
+    cmds:
+      - qmk c2json -km hien-pd-dac -kb crkbd/rev1 -o keyboards/crkbd/keymaps/hien-pd-dac/notes/keymap.json keyboards/crkbd/keymaps/hien-pd-dac/keymap.c --no-cpp
