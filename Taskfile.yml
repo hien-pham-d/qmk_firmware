@@ -2,6 +2,11 @@ version: '3'
 
 set: ['errexit', 'nounset', 'pipefail']
 
+vars:
+  QMK_DIR: $HOME/workspace/repos/qmk_firmware
+  KB: crkbd/rev1
+  KM: hien-pd-dac
+
 tasks:
   compile:
     desc: 'Compile the keyboard firmware'
@@ -19,3 +24,14 @@ tasks:
   gen-keymapjson:
     cmds:
       - qmk c2json -km hien-pd-dac -kb crkbd/rev1 -o keyboards/crkbd/keymaps/hien-pd-dac/notes/keymap.json keyboards/crkbd/keymaps/hien-pd-dac/keymap.c --no-cpp
+
+  install-qmk:
+    cmds:
+      - brew install qmk/qmk/qmk
+  init:
+    cmds:
+      - qmk setup -H {{.QMK_DIR}}
+      - qmk config user.qmk_home={{.QMK_DIR}}
+      - qmk config user.keyboard={{.KB}}
+      - qmk config user.keymap={{.KM}}
+
