@@ -70,9 +70,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_TRNS,  KC_F11,  KC_F12,  KC_DEL, KC_PSCR,   RESET,                      RGB_TOG, RGB_MOD, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_TRNS,  KC_INS, KC_PGUP, KC_PGDN, KC_HOME,  KC_END,                      TG(_GAME_L), RGB_RMOD, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,
+      KC_TRNS,  KC_INS, KC_PGUP, KC_PGDN, KC_HOME,  KC_END,                      KC_TRNS, RGB_RMOD, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS,   KC_TRNS
+                                          KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, TG(_GAME_L)
                                       //`--------------------------'  `--------------------------'
   ),
   [_GAME_L] = LAYOUT_split_3x6_3(
@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_TRNS,   KC_Z, KC_X, KC_C, KC_V, KC_TRNS,                            KC_TRNS, KC_TRNS,   KC_LT,   KC_GT, KC_QUES,   KC_TRNS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                            KC_TRNS, MO(_LOWER_L), KC_LALT,    KC_TRNS,   MO(_RAISE_L),   KC_TRNS
+                                            KC_TRNS, KC_TRNS, KC_LALT,    KC_TRNS,   KC_TRNS,   KC_TRNS
                                       //`--------------------------'  `--------------------------'
   ),
 };
